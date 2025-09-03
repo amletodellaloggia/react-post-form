@@ -1,6 +1,35 @@
 import { useState } from "react";
+import axios from "axios";
 
 const PostForm = () => {
+  const initialFormData = {
+    author: "",
+    title: "",
+    body: "",
+    public: true,
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
+
+  const handleChange = (e) => {
+    const { name, value, type } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === "radio" ? value === "true" : value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    axios
+      .post("https://67c5b4f3351c081993fb1ab6.mockapi.io/api/posts", formData)
+      .then((resp) => {
+        console.log("Dati inviati con successo:", resp.data);
+        setFormData(initialFormData);
+      });
+  };
+
   return (
     <div>
       <div className="container-fluid m-5">
@@ -82,6 +111,9 @@ const PostForm = () => {
                   </div>
                 </div>
               </fieldset>
+              <button type="submit" className="btn btn-primary">
+                Submit Post
+              </button>
             </form>
           </div>
         </div>
