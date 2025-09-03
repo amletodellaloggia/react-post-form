@@ -5,7 +5,17 @@
   box-sizing: border-box;
 }
 
-.row{
-  width: 1200px;
+.main{
+  max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.container-fluid{
+  display: flex;
+  width: 50%;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 30px;
 }

@@ -1,7 +1,8 @@
 function App() {
   return (
     <>
-      <div className="container-fluid">
+    <div className="main">
+      <div className="container-fluid m-5">
         <div className="row">
           <div className="col">
             <form>
@@ -17,7 +18,7 @@ function App() {
                     aria-label="Author Name"
                   />
                 </div>
-                <div class="col">
+                <div class="col mb-3">
                   <label for="exampleFormControlTextarea1" class="form-label">
                     Post Title
                   </label>
@@ -42,7 +43,7 @@ function App() {
               </div>
               <fieldset className="row mb-3">
                 <legend className="col-form-label col-sm-2 pt-0">
-                  Public Post
+                  Public
                 </legend>
                 <div className="col-sm-10">
                   <div className="form-check">
@@ -76,8 +77,11 @@ function App() {
           </div>
         </div>
       </div>
+      </div>
     </>
   );
 }
+
+
 
 export default App;
